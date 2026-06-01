@@ -1,0 +1,373 @@
+
+<style>
+  .tb { padding: 7px 16px; font-size: 13px; font-weight: 500; border: 0.5px solid var(--color-border-secondary); border-radius: var(--border-radius-md); background: transparent; color: var(--color-text-secondary); cursor: pointer; transition: background .15s, color .15s, border-color .15s; }
+  .tb.act { background: #FAEEDA; color: #633806; border-color: #EF9F27; }
+  .tb:hover:not(.act) { background: var(--color-background-secondary); }
+  @media (prefers-color-scheme: dark) { .tb.act { background: #412402; color: #FAC775; border-color: #BA7517; } }
+
+  .sec { display: none; margin-top: 2rem; animation: fadein .2s ease; }
+  .sec.active { display: block; }
+  @keyframes fadein { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: translateY(0); } }
+
+  .grid2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px; }
+  .grid3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 10px; }
+
+  .card { background: var(--color-background-primary); border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-lg); padding: 1.1rem 1.25rem; }
+  .mcard { background: var(--color-background-secondary); border-radius: var(--border-radius-md); padding: .875rem 1rem; }
+
+  .section-label { font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: .08em; color: var(--color-text-tertiary); margin: 0 0 1rem; }
+  .card-title { font-size: 15px; font-weight: 500; color: var(--color-text-primary); margin: 0 0 5px; }
+  .body-text { font-size: 14px; color: var(--color-text-secondary); margin: 0; line-height: 1.6; }
+
+  .tag { display: inline-flex; align-items: center; gap: 4px; padding: 3px 10px; border-radius: var(--border-radius-md); font-size: 12px; font-weight: 500; white-space: nowrap; }
+  .ta { background: #FAEEDA; color: #633806; }
+  .tt { background: #E1F5EE; color: #085041; }
+  .tc { background: #FAECE7; color: #712B13; }
+  .tp { background: #EEEDFE; color: #26215C; }
+  .tg { background: var(--color-background-secondary); color: var(--color-text-secondary); }
+  @media (prefers-color-scheme: dark) { .ta { background: #412402; color: #FAC775; } .tt { background: #04342C; color: #9FE1CB; } .tc { background: #4A1B0C; color: #F0997B; } .tp { background: #26215C; color: #AFA9EC; } }
+
+  .row { display: flex; align-items: flex-start; gap: 10px; padding: 8px 0; border-bottom: 0.5px solid var(--color-border-tertiary); }
+  .row:last-child { border-bottom: none; }
+  .row .body-text { padding-top: 1px; }
+
+  .stat-num { font-size: 26px; font-weight: 500; color: var(--color-text-primary); margin-top: 2px; }
+  .stat-lbl { font-size: 11px; color: var(--color-text-tertiary); margin-bottom: 2px; }
+</style>
+
+<div style="padding: 1.25rem 0 0">
+  <div style="display: flex; gap: 7px; flex-wrap: wrap; padding-bottom: 1rem; border-bottom: 0.5px solid var(--color-border-tertiary);">
+    <button class="tb act" onclick="show('brand')" data-t="brand">Brand intel</button>
+    <button class="tb" onclick="show('audience')" data-t="audience">Audiences</button>
+    <button class="tb" onclick="show('online')" data-t="online">Online</button>
+    <button class="tb" onclick="show('offline')" data-t="offline">Offline</button>
+    <button class="tb" onclick="show('cross')" data-t="cross">Cross-promo</button>
+    <button class="tb" onclick="show('charme')" data-t="charme">Charmé's role</button>
+  </div>
+
+  <!-- BRAND -->
+  <div class="sec active" id="s-brand">
+    <p class="section-label">Brand snapshot</p>
+    <div class="grid3" style="margin-bottom: 1.75rem;">
+      <div class="mcard"><div class="stat-lbl">Verified pandits</div><div class="stat-num">20,000+</div></div>
+      <div class="mcard"><div class="stat-lbl">Total bookings</div><div class="stat-num">1 lakh+</div></div>
+      <div class="mcard"><div class="stat-lbl">Customer rating</div><div class="stat-num">4.9 / 5</div></div>
+      <div class="mcard"><div class="stat-lbl">Puja types</div><div class="stat-num">400+</div></div>
+      <div class="mcard"><div class="stat-lbl">Cities covered</div><div class="stat-num">70+</div></div>
+      <div class="mcard"><div class="stat-lbl">Founded</div><div class="stat-num">2021</div></div>
+    </div>
+
+    <div class="grid2" style="margin-bottom: 1.75rem;">
+      <div class="card">
+        <p class="section-label" style="color: #0F6E56; margin-bottom: .75rem;">Strengths to amplify</p>
+        <div class="row"><i class="ti ti-check" style="font-size:16px; color:#1D9E75; margin-top:1px; flex-shrink:0" aria-hidden="true"></i><span class="body-text">Massive pandit network — trust moat competitors can't quickly replicate</span></div>
+        <div class="row"><i class="ti ti-check" style="font-size:16px; color:#1D9E75; margin-top:1px; flex-shrink:0" aria-hidden="true"></i><span class="body-text">SEO dominance — huge organic traffic from aarti lyrics, muhurat, astrology blogs</span></div>
+        <div class="row"><i class="ti ti-check" style="font-size:16px; color:#1D9E75; margin-top:1px; flex-shrink:0" aria-hidden="true"></i><span class="body-text">E-Puja feature — live streaming unlocks NRI + mobility-constrained market</span></div>
+        <div class="row"><i class="ti ti-check" style="font-size:16px; color:#1D9E75; margin-top:1px; flex-shrink:0" aria-hidden="true"></i><span class="body-text">4.9/5 rating across multiple platforms — credibility is already built</span></div>
+        <div class="row"><i class="ti ti-check" style="font-size:16px; color:#1D9E75; margin-top:1px; flex-shrink:0" aria-hidden="true"></i><span class="body-text">Both user app + pandit partner app — supply and demand side covered</span></div>
+      </div>
+      <div class="card">
+        <p class="section-label" style="color: #993C1D; margin-bottom: .75rem;">Gaps = our opportunity</p>
+        <div class="row"><i class="ti ti-arrow-right" style="font-size:16px; color:#D85A30; margin-top:1px; flex-shrink:0" aria-hidden="true"></i><span class="body-text">No visible performance marketing story — app install campaigns appear absent</span></div>
+        <div class="row"><i class="ti ti-arrow-right" style="font-size:16px; color:#D85A30; margin-top:1px; flex-shrink:0" aria-hidden="true"></i><span class="body-text">Web traffic not converting to app downloads — SEO traffic is orphaned</span></div>
+        <div class="row"><i class="ti ti-arrow-right" style="font-size:16px; color:#D85A30; margin-top:1px; flex-shrink:0" aria-hidden="true"></i><span class="body-text">Social content lacks a consistent creative direction and posting rhythm</span></div>
+        <div class="row"><i class="ti ti-arrow-right" style="font-size:16px; color:#D85A30; margin-top:1px; flex-shrink:0" aria-hidden="true"></i><span class="body-text">No visible retention/re-engagement strategy — one-time bookers not recaptured</span></div>
+        <div class="row"><i class="ti ti-arrow-right" style="font-size:16px; color:#D85A30; margin-top:1px; flex-shrink:0" aria-hidden="true"></i><span class="body-text">NRI market underserved — E-Puja is a strong product with weak distribution</span></div>
+      </div>
+    </div>
+
+    <p class="section-label">Competitive landscape</p>
+    <div class="card">
+      <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px;">
+        <span class="tag tc"><i class="ti ti-flame" style="font-size:13px" aria-hidden="true"></i> Astrotalk</span>
+        <span class="tag tc"><i class="ti ti-flame" style="font-size:13px" aria-hidden="true"></i> InstaAstro</span>
+        <span class="tag tc"><i class="ti ti-flame" style="font-size:13px" aria-hidden="true"></i> UtsavApp</span>
+        <span class="tag tc"><i class="ti ti-flame" style="font-size:13px" aria-hidden="true"></i> VAMA</span>
+        <span class="tag tc"><i class="ti ti-flame" style="font-size:13px" aria-hidden="true"></i> Sri Mandir</span>
+      </div>
+      <p class="body-text">Key differentiator to own: 99Pandit is the only platform positioning on verified Vedic accuracy and full end-to-end coordination — not just a directory. Astrotalk/InstaAstro are astrology-first; VAMA and Sri Mandir are primarily devotional content. The "book + samagri + pandit + live stream" bundle is 99Pandit's unique territory — and it's where the campaign narrative should live.</p>
+    </div>
+  </div>
+
+  <!-- AUDIENCES -->
+  <div class="sec" id="s-audience">
+    <p class="section-label">Target audience segments — app downloads focus</p>
+    <div class="grid2">
+      <div class="card">
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:10px;">
+          <i class="ti ti-home" style="font-size:22px; color:#EF9F27" aria-hidden="true"></i>
+          <div><div class="card-title">New homeowner</div><span class="tag ta">Griha Pravesh</span></div>
+        </div>
+        <p class="body-text">Urban, 28–45, just bought or moving into a new home. High-intent trigger with a clear date. Lives in Tier 1/2 cities, discovers via search.</p>
+        <p class="body-text" style="margin-top:8px;"><span style="color:var(--color-text-tertiary); font-size:12px;">Reach via →</span> Real estate platforms, Meta life-event targeting, Google search</p>
+      </div>
+      <div class="card">
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:10px;">
+          <i class="ti ti-heart" style="font-size:22px; color:#EF9F27" aria-hidden="true"></i>
+          <div><div class="card-title">Wedding family</div><span class="tag ta">Marriage puja</span></div>
+        </div>
+        <p class="body-text">Parents/family planning a wedding, 40–60. Highest average order value. Traditional, values authenticity and language-specific pandits. Plans months ahead.</p>
+        <p class="body-text" style="margin-top:8px;"><span style="color:var(--color-text-tertiary); font-size:12px;">Reach via →</span> Wedding platforms, venue tie-ups, festive season ads</p>
+      </div>
+      <div class="card">
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:10px;">
+          <i class="ti ti-sparkles" style="font-size:22px; color:#1D9E75" aria-hidden="true"></i>
+          <div><div class="card-title">Festival devotee</div><span class="tag tt">High volume</span></div>
+        </div>
+        <p class="body-text">25–55, celebrates all major Hindu festivals. Wants convenience for Diwali, Navratri, Ganesh Chaturthi, Shravan Pujas. High frequency, moderate order value.</p>
+        <p class="body-text" style="margin-top:8px;"><span style="color:var(--color-text-tertiary); font-size:12px;">Reach via →</span> Festival-triggered campaigns, devotional content, YouTube</p>
+      </div>
+      <div class="card">
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:10px;">
+          <i class="ti ti-globe" style="font-size:22px; color:#7F77DD" aria-hidden="true"></i>
+          <div><div class="card-title">NRI diaspora</div><span class="tag tp">High value</span></div>
+        </div>
+        <p class="body-text">25–50, living in USA, UK, UAE, Singapore. High disposable income. Wants E-Puja or pujas arranged in India for family. Pays premium for reliability.</p>
+        <p class="body-text" style="margin-top:8px;"><span style="color:var(--color-text-tertiary); font-size:12px;">Reach via →</span> NRI community groups, Instagram diaspora targeting, YouTube</p>
+      </div>
+      <div class="card">
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:10px;">
+          <i class="ti ti-baby-carriage" style="font-size:22px; color:#EF9F27" aria-hidden="true"></i>
+          <div><div class="card-title">New parent</div><span class="tag ta">Birth ceremonies</span></div>
+        </div>
+        <p class="body-text">25–40, planning Namkaran, Mundan, Annaprashan. Predictable timing. Millennial parents, comfortable booking digitally. Strong word-of-mouth potential.</p>
+        <p class="body-text" style="margin-top:8px;"><span style="color:var(--color-text-tertiary); font-size:12px;">Reach via →</span> Baby/parenting apps, mom communities, hospital tie-ups</p>
+      </div>
+      <div class="card">
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:10px;">
+          <i class="ti ti-moon-stars" style="font-size:22px; color:#7F77DD" aria-hidden="true"></i>
+          <div><div class="card-title">Dosha remedy seeker</div><span class="tag tp">Repeat user</span></div>
+        </div>
+        <p class="body-text">30–55, astrology-driven. Books Kaal Sarp Dosh, Mangal Dosh, Pitru Dosh pujas. Referred by astrologers. High intent, consistent demand year-round.</p>
+        <p class="body-text" style="margin-top:8px;"><span style="color:var(--color-text-tertiary); font-size:12px;">Reach via →</span> Astrology content, influencer partnerships, search ads</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ONLINE -->
+  <div class="sec" id="s-online">
+    <p class="section-label">Online — acquisition + retention</p>
+    <div class="grid2">
+      <div class="card">
+        <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:8px;">
+          <p class="card-title"><i class="ti ti-device-mobile" style="font-size:16px; vertical-align:-2px; margin-right:7px" aria-hidden="true"></i>Meta app install campaigns</p>
+          <span class="tag ta">Priority 1</span>
+        </div>
+        <p class="body-text">Life-event targeting (new home, new baby, marriage). Festival-triggered bursts for Navratri, Shravan, Diwali. Lookalike audiences from existing bookers. Retargeting web visitors who bounced without downloading.</p>
+      </div>
+      <div class="card">
+        <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:8px;">
+          <p class="card-title"><i class="ti ti-brand-google" style="font-size:16px; vertical-align:-2px; margin-right:7px" aria-hidden="true"></i>Google UAC (app campaigns)</p>
+          <span class="tag ta">Priority 1</span>
+        </div>
+        <p class="body-text">"Pandit near me", "Griha Pravesh puja", "book pandit online" queries → direct app install. YouTube pre-roll before devotional and bhajan content. High-intent search-to-download funnel.</p>
+      </div>
+      <div class="card">
+        <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:8px;">
+          <p class="card-title"><i class="ti ti-video" style="font-size:16px; vertical-align:-2px; margin-right:7px" aria-hidden="true"></i>Reels & short video content</p>
+          <span class="tag tt">Organic growth</span>
+        </div>
+        <p class="body-text">Daily muhurat/panchang reels. "How this puja is performed" education series. Pandit spotlight stories. Behind-the-scenes of a ceremony. Festival countdown content. Each reel ends with an app download CTA.</p>
+      </div>
+      <div class="card">
+        <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:8px;">
+          <p class="card-title"><i class="ti ti-brand-whatsapp" style="font-size:16px; vertical-align:-2px; margin-right:7px" aria-hidden="true"></i>WhatsApp Business broadcasts</p>
+          <span class="tag tt">Retention</span>
+        </div>
+        <p class="body-text">Festival reminders 7 days before major pujas. Shubh Muhurat alerts for the week. Post-booking updates. Re-engagement for users who booked 6+ months ago. Direct link to app booking.</p>
+      </div>
+      <div class="card">
+        <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:8px;">
+          <p class="card-title"><i class="ti ti-mail" style="font-size:16px; vertical-align:-2px; margin-right:7px" aria-hidden="true"></i>Email & retention funnels</p>
+          <span class="tag tt">Retention</span>
+        </div>
+        <p class="body-text">Post-booking: ritual guide PDF → review request → next puja suggestion. Annual reminders for Varshika Shradh. Festival calendar drip campaign. App re-engagement for inactive users.</p>
+      </div>
+      <div class="card">
+        <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:8px;">
+          <p class="card-title"><i class="ti ti-users" style="font-size:16px; vertical-align:-2px; margin-right:7px" aria-hidden="true"></i>Influencer & creator partnerships</p>
+          <span class="tag tp">Trust building</span>
+        </div>
+        <p class="body-text">Spiritual influencers (100K–1M followers). Astrology content creators. Mom/parenting bloggers for birth ceremony content. Home influencers for Griha Pravesh. Authentic UGC-style placements, not scripted ads.</p>
+      </div>
+      <div class="card">
+        <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:8px;">
+          <p class="card-title"><i class="ti ti-search" style="font-size:16px; vertical-align:-2px; margin-right:7px" aria-hidden="true"></i>SEO → app conversion bridge</p>
+          <span class="tag tg">Quick win</span>
+        </div>
+        <p class="body-text">99Pandit already ranks for thousands of keywords. The gap: no app download CTAs on high-traffic pages. Add smart banners and inline CTAs on the top 50 pages. Also: App Store Optimisation (ASO) for discoverability.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- OFFLINE -->
+  <div class="sec" id="s-offline">
+    <p class="section-label">Offline — on-ground acquisition</p>
+    <div class="grid2">
+      <div class="card">
+        <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:8px;">
+          <p class="card-title"><i class="ti ti-building-temple" style="font-size:16px; vertical-align:-2px; margin-right:7px" aria-hidden="true"></i>Temple QR activations</p>
+          <span class="tag ta">High reach</span>
+        </div>
+        <p class="body-text">QR standees and posters at major temples in Varanasi, Ujjain, Haridwar, Tirupati, Shirdi. Placed at prasad counters and notice boards. "Don't have a pandit yet? Book in 2 minutes" messaging. Pilgrimage visitors = high intent.</p>
+      </div>
+      <div class="card">
+        <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:8px;">
+          <p class="card-title"><i class="ti ti-confetti" style="font-size:16px; vertical-align:-2px; margin-right:7px" aria-hidden="true"></i>Festival activations</p>
+          <span class="tag ta">Seasonal</span>
+        </div>
+        <p class="body-text">Community puja sponsorship during Navratri, Ganesh Chaturthi, Diwali — branded as "presented by 99Pandit". Live stream free group pujas to showcase E-Puja. On-ground teams with app download assistance.</p>
+      </div>
+      <div class="card">
+        <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:8px;">
+          <p class="card-title"><i class="ti ti-building-skyscraper" style="font-size:16px; vertical-align:-2px; margin-right:7px" aria-hidden="true"></i>Real estate developer tie-ups</p>
+          <span class="tag tt">Best ROI offline</span>
+        </div>
+        <p class="body-text">Partner with major builders — Sobha, Prestige, Godrej, DLF, Lodha. 99Pandit QR on the key handover kit. "Your new home deserves a blessed beginning" — Griha Pravesh conversion on new handovers would be extraordinary.</p>
+      </div>
+      <div class="card">
+        <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:8px;">
+          <p class="card-title"><i class="ti ti-building-community" style="font-size:16px; vertical-align:-2px; margin-right:7px" aria-hidden="true"></i>RWA / housing society partnerships</p>
+          <span class="tag tg">Ongoing</span>
+        </div>
+        <p class="body-text">Partner with Resident Welfare Associations in large apartment complexes. Flyers in lift lobbies, society noticeboards. Offer a "society exclusive" first-puja discount. Ideal word-of-mouth engines.</p>
+      </div>
+      <div class="card">
+        <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:8px;">
+          <p class="card-title"><i class="ti ti-rings-wedding" style="font-size:16px; vertical-align:-2px; margin-right:7px" aria-hidden="true"></i>Wedding venue partnerships</p>
+          <span class="tag tg">Year-round</span>
+        </div>
+        <p class="body-text">Banquet halls, marriage gardens, wedding planners become referral partners. Mandap decorators, catering companies, venue coordinators — all recommend 99Pandit for the religious ceremony component.</p>
+      </div>
+      <div class="card">
+        <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:8px;">
+          <p class="card-title"><i class="ti ti-shopping-bag" style="font-size:16px; vertical-align:-2px; margin-right:7px" aria-hidden="true"></i>Samagri shop placements</p>
+          <span class="tag tg">Low cost</span>
+        </div>
+        <p class="body-text">QR code stickers and small standees at puja item shops, agarbatti counters, and religious stationery stores. Someone buying samagri is actively planning a puja — high intent at the point of purchase.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- CROSS-PROMO -->
+  <div class="sec" id="s-cross">
+    <p class="section-label">Cross-promotional partnerships</p>
+    <div class="grid2">
+      <div class="card">
+        <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:8px;">
+          <p class="card-title"><i class="ti ti-home-2" style="font-size:16px; vertical-align:-2px; margin-right:7px" aria-hidden="true"></i>Real estate platforms</p>
+          <span class="tag ta">Biggest opportunity</span>
+        </div>
+        <p class="body-text">NoBroker, 99acres, MagicBricks, Housing.com. "Moving in? Book your Griha Pravesh Puja" after lease/purchase confirmation. Co-marketing during new project launches. Potential deep-link integration.</p>
+      </div>
+      <div class="card">
+        <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:8px;">
+          <p class="card-title"><i class="ti ti-heart" style="font-size:16px; vertical-align:-2px; margin-right:7px" aria-hidden="true"></i>Wedding platforms</p>
+          <span class="tag tt">Seasonal volume</span>
+        </div>
+        <p class="body-text">WedMeGood, ShaadiSaga, Wedbook, WeddingWire India. 99Pandit listed as the go-to puja booking platform in their vendor marketplace. Co-campaigns during peak wedding seasons (Nov–Feb, Apr–May).</p>
+      </div>
+      <div class="card">
+        <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:8px;">
+          <p class="card-title"><i class="ti ti-baby-carriage" style="font-size:16px; vertical-align:-2px; margin-right:7px" aria-hidden="true"></i>Baby & parenting platforms</p>
+          <span class="tag tp">Niche, high-trust</span>
+        </div>
+        <p class="body-text">BabyChakra, Healofy, mom Facebook groups. Promote Namkaran, Mundan, Annaprashan booking. New parents are among the highest-converting and most word-of-mouth-active customers.</p>
+      </div>
+      <div class="card">
+        <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:8px;">
+          <p class="card-title"><i class="ti ti-device-tv" style="font-size:16px; vertical-align:-2px; margin-right:7px" aria-hidden="true"></i>Devotional OTT & TV</p>
+          <span class="tag ta">Mass reach</span>
+        </div>
+        <p class="body-text">Sadhana TV, Aastha, Bhakti channels — pre-roll or mid-roll ad placements before bhajan/katha content. Audience overlap is near-perfect. Also: sponsorships for popular bhajan YouTube channels.</p>
+      </div>
+      <div class="card">
+        <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:8px;">
+          <p class="card-title"><i class="ti ti-world" style="font-size:16px; vertical-align:-2px; margin-right:7px" aria-hidden="true"></i>NRI community channels</p>
+          <span class="tag tp">High value, low cost</span>
+        </div>
+        <p class="body-text">Indian diaspora Facebook groups (USA/UK/UAE), NRI WhatsApp communities, Indian cultural organisations abroad. E-Puja is the perfect product here. Partner with Desi community event organisers for visibility.</p>
+      </div>
+      <div class="card">
+        <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:8px;">
+          <p class="card-title"><i class="ti ti-map-pin" style="font-size:16px; vertical-align:-2px; margin-right:7px" aria-hidden="true"></i>Spiritual tourism operators</p>
+          <span class="tag tt">Premium niche</span>
+        </div>
+        <p class="body-text">Varanasi, Ujjain, Haridwar, Tirupati tour packages. Travel operators who take groups for Char Dham or jyotirlinga circuits — bundle 99Pandit's pandit booking into the itinerary, especially for NRIs doing India pilgrimages.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- CHARME -->
+  <div class="sec" id="s-charme">
+    <p class="section-label">How Charmé's services map to 99Pandit's needs</p>
+    <div style="display: flex; flex-direction: column; gap: 10px;">
+      <div class="card" style="display:flex; align-items:flex-start; gap:14px;">
+        <span class="tag ta" style="flex-shrink:0; margin-top:2px;">Acquisition</span>
+        <div>
+          <p class="card-title">Meta & Google app install campaigns</p>
+          <p class="body-text">Life-event and festival targeting on Meta. Google UAC to capture "pandit near me" searches. Charmé runs creative testing, audience segmentation, and weekly funnel optimisation — the full stack, not just ad setup.</p>
+        </div>
+      </div>
+      <div class="card" style="display:flex; align-items:flex-start; gap:14px;">
+        <span class="tag ta" style="flex-shrink:0; margin-top:2px;">Acquisition</span>
+        <div>
+          <p class="card-title">Reels & short video content packs</p>
+          <p class="body-text">Charmé produces high-frequency reels — daily muhurat content, puja ceremony walkthroughs, pandit spotlights — optimised for app downloads. Nicky's creative direction ensures this looks elevated, not templated.</p>
+        </div>
+      </div>
+      <div class="card" style="display:flex; align-items:flex-start; gap:14px;">
+        <span class="tag tt" style="flex-shrink:0; margin-top:2px;">Retention</span>
+        <div>
+          <p class="card-title">Email funnels & WhatsApp automation</p>
+          <p class="body-text">Booking confirmation flows, festival reminder sequences, annual ritual prompts, and re-engagement campaigns for lapsed users. Converts first-time bookers into repeat customers and app habits.</p>
+        </div>
+      </div>
+      <div class="card" style="display:flex; align-items:flex-start; gap:14px;">
+        <span class="tag tg" style="flex-shrink:0; margin-top:2px;">Quick win</span>
+        <div>
+          <p class="card-title">SEO → app CTA bridge & ASO</p>
+          <p class="body-text">99Pandit's existing web traffic is not converting to app downloads. Charmé adds smart download CTAs on top-ranked pages and optimises the App Store listing (ASO) for discoverability — low effort, high leverage.</p>
+        </div>
+      </div>
+      <div class="card" style="display:flex; align-items:flex-start; gap:14px;">
+        <span class="tag tp" style="flex-shrink:0; margin-top:2px;">Trust</span>
+        <div>
+          <p class="card-title">Brand film — "Book the puja right" campaign</p>
+          <p class="body-text">Siddha's film background gives this a cinematic quality that typical startup brand videos lack. A 90-second brand story film + shorter social cuts. Establishes emotional authority in a market built entirely on trust.</p>
+        </div>
+      </div>
+      <div class="card" style="display:flex; align-items:flex-start; gap:14px;">
+        <span class="tag ta" style="flex-shrink:0; margin-top:2px;">Offline</span>
+        <div>
+          <p class="card-title">Festival activations & event management</p>
+          <p class="body-text">On-ground activations during Navratri, Diwali, Ganesh Chaturthi. Community puja sponsorships branded under 99Pandit. Charmé handles concept, execution, and documentation for social amplification.</p>
+        </div>
+      </div>
+      <div class="card" style="display:flex; align-items:flex-start; gap:14px;">
+        <span class="tag tt" style="flex-shrink:0; margin-top:2px;">Cross-promo</span>
+        <div>
+          <p class="card-title">Partnership outreach & collateral</p>
+          <p class="body-text">Charmé's BD background (Aditi's inbound sales experience) is well-suited to approach real estate developers, wedding platforms, and NRI community groups with structured partnership proposals and co-marketing material.</p>
+        </div>
+      </div>
+      <div class="card" style="display:flex; align-items:flex-start; gap:14px;">
+        <span class="tag tp" style="flex-shrink:0; margin-top:2px;">PR</span>
+        <div>
+          <p class="card-title">Media & print publicity</p>
+          <p class="body-text">Coverage hooks: "2 lakh pujas booked" milestone, E-Puja NRI story, festival season launches. Charmé's 50M+ media reach connects to editorial hooks that don't look like press releases.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+const btns = document.querySelectorAll('.tb');
+function show(id) {
+  document.querySelectorAll('.sec').forEach(s => s.classList.remove('active'));
+  document.getElementById('s-' + id).classList.add('active');
+  btns.forEach(b => b.classList.remove('act'));
+  document.querySelector('[data-t="' + id + '"]').classList.add('act');
+}
+</script>
